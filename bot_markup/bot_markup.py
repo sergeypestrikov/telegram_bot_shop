@@ -1,5 +1,5 @@
 # Импорт специального типа телеграм бота для создания элементов интерфейса
-from telebot.types import KeyboardButton, ReplyKeyboardMarkup
+from telebot.types import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardButton, InlineKeyboardMarkup
 # Импорт настроек и утилит
 from settings import config
 # Импорт класс-менеджер для работы с библиотекой
@@ -54,4 +54,42 @@ class Keyboard:
         itm_btn_1 = self.set_btn('<<')
         # Расположение кнопок в меню
         self.markup.row(itm_btn_1)
+        return self.markup
+
+    @staticmethod
+    def remove_menu():
+        """
+        Удаляет меню
+        """
+        return ReplyKeyboardRemove()
+
+    def category_menu(self):
+        """
+        Создает и возвращает разметку в меню категорий товаров
+        """
+        self.markup = ReplyKeyboardMarkup(True, True, row_width=1)
+        self.markup.add(self.set_btn('PROTEIN'))
+        self.markup.add(self.set_btn('GYM'))
+        self.markup.add(self.set_btn('POOL'))
+        self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
+        return self.markup
+
+    @staticmethod
+    def set_inline_btn(name):
+        """
+        Создает и возвращает инлайн-кнопку по входным параметрам
+        """
+        return InlineKeyboardButton(str(name), callback_data=str(name.id))
+
+    def set_select_category(self, category):
+        """
+        Создает и возвращает разметку инлайн-кнопок
+        в выбранной категории товара
+        """
+        self.markup = InlineKeyboardMarkup(row_width=1)
+        # Подгрузка данных инлайн-кнопок из БД
+        # в соответствии с категорией товара
+        for itm in self.DB.select_all_products_category(category):
+            self.markup.add(self.set_inline_btn(itm))
+
         return self.markup

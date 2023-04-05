@@ -15,7 +15,7 @@ class HandlerCommands(Handler):
         """
         self.bot.send_message(message.chat.id,
                               f'{message.from_user.first_name}, '
-                              f'Здравствуйте! Ожидаю Ваших указаний.',
+                              f'здравствуйте! Ожидаю Ваших указаний.',
                               reply_markup=self.keyboard.start_menu())
 
     def handle(self):

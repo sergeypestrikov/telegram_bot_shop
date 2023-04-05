@@ -2,7 +2,7 @@
 import abc
 # Импорт разметку клавиатуры и клавиш
 from bot_markup.bot_markup import Keyboard
-# импортируем класс-менеджер для работы с библиотекой
+# Импорт класса-менеджера для работы с библиотекой
 from data_base.dbalchemy import DBManager
 
 

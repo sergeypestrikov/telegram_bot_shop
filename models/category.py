@@ -1,10 +1,6 @@
 # Компоненты библиотеки для описания структуры таблицы
 from sqlalchemy import Column, String, Integer, Boolean
-# Класс-конструктор для работы с декларативным стилем SQLAlchemy
-from sqlalchemy.ext.declarative import declarative_base
-
-# Инициализация декларативного стиля
-Base = declarative_base()
+from data_base.db_core import Base
 
 
 class Category(Base):
@@ -20,6 +16,6 @@ class Category(Base):
     name = Column(String, index=True)
     is_active = Column(Boolean)
 
-    def __str__(self):
-        # Метод возвращающий строковое представление класса
+    def __repr__(self):
+        # Метод возвращающий строковое представление объекта
         return self.name

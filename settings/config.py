@@ -5,7 +5,7 @@ from emoji import emojize
 # Токен - выдается при регистрации приложения
 TOKEN = '6012497798:AAH_QIFfdMOkNkFyF1pZtPBi4om9VFjhDio'
 # Название БД
-NAME_DB = 'product.sqlite'
+NAME_DB = 'products.db'
 # Версия приложения
 VERSION = '0.0.1'
 # Автор приложения
@@ -23,9 +23,9 @@ KEYBOARD = {
     'CHOOSE_GOODS': emojize(':open_file_folder: Выбрать товар'),
     'INFO': emojize(':speech_balloon: О магазине'),
     'SETTINGS': emojize('⚙️ Настройки'),
-    'SEMIPRODUCT': emojize(':pizza: Полуфабрикаты'),
-    'GROCERY': emojize(':bread: Бакалея'),
-    'ICE_CREAM': emojize(':shaved_ice: Мороженое'),
+    'PROTEIN': emojize(':cut_of_meat: Спортивное питание'),
+    'GYM': emojize(':person_lifting_weights: Товары для зала'),
+    'POOL': emojize(':woman_swimming: Товары для бассейна'),
     '<<': emojize('⏪'),
     '>>': emojize('⏩'),
     'BACK_STEP': emojize('◀️'),
@@ -42,9 +42,9 @@ KEYBOARD = {
 
 # id категорий продуктов
 CATEGORY = {
-    'SEMIPRODUCT': 1,
-    'GROCERY': 2,
-    'ICE_CREAM': 3,
+    'PROTEIN': 1,
+    'GYM': 2,
+    'POOL': 3,
 }
 
 # Названия команд
