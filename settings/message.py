@@ -1,5 +1,5 @@
 # Импорт настроек для отражения эмоджи
-from config import KEYBOARD, VERSION, AUTHOR
+from .config import KEYBOARD, VERSION, AUTHOR
 
 # Ответ пользователю при посещении блока "О магазине"
 trading_store = """
@@ -113,6 +113,6 @@ MESSAGES = {
     'order': order,
     'order_number': order_number,
     'no_orders': no_orders,
-    'applay': applay,
+    'apply': apply,
     'settings': settings
 }
