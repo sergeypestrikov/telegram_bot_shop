@@ -5,7 +5,7 @@ from emoji import emojize
 # Токен - выдается при регистрации приложения
 TOKEN = '6012497798:AAH_QIFfdMOkNkFyF1pZtPBi4om9VFjhDio'
 # Название БД
-NAME_DB = 'products.db'
+NAME_DB = 'product.db'
 # Версия приложения
 VERSION = '0.0.1'
 # Автор приложения
