@@ -26,6 +26,7 @@ KEYBOARD = {
     'PROTEIN': emojize(':cut_of_meat: Спортивное питание'),
     'GYM': emojize(':person_lifting_weights: Товары для зала'),
     'POOL': emojize(':woman_swimming: Товары для бассейна'),
+    'TRAINING': emojize('💪 Персональная тренировка'),
     '<<': emojize('⏪'),
     '>>': emojize('⏩'),
     'BACK_STEP': emojize('◀️'),
@@ -45,6 +46,7 @@ CATEGORY = {
     'PROTEIN': 1,
     'GYM': 2,
     'POOL': 3,
+    'TRAINING': 4,
 }
 
 # Названия команд
