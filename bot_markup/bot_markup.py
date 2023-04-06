@@ -71,6 +71,7 @@ class Keyboard:
         self.markup.add(self.set_btn('PROTEIN'))
         self.markup.add(self.set_btn('GYM'))
         self.markup.add(self.set_btn('POOL'))
+        self.markup.add(self.set_btn('TRAINING'))
         self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
         return self.markup
 

@@ -79,7 +79,7 @@ class HandlerAllText(Handler):
             if message.text == config.KEYBOARD['<<']:
                 self.pressed_btn_back(message)
 
-            # ********** меню (категории товара, ПФ, Бакалея, Мороженое)******
+            # ********** меню (категории товаров) ******
             if message.text == config.KEYBOARD['PROTEIN']:
                 self.pressed_btn_product(message, 'PROTEIN')
 
@@ -88,3 +88,6 @@ class HandlerAllText(Handler):
 
             if message.text == config.KEYBOARD['POOL']:
                 self.pressed_btn_product(message, 'POOL')
+
+            if message.text == config.KEYBOARD['TRAINING']:
+                self.pressed_btn_product(message, 'TRAINING')
