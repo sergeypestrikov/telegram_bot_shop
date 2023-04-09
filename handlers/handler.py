@@ -15,7 +15,7 @@ class Handler(metaclass=abc.ABCMeta):
         # Инициализация разметки кнопок
         self.keyboard = Keyboard()
         # Инициализация менеджера для работы с БД
-        self.BD = DBManager()
+        self.DB = DBManager()
 
     @abc.abstractmethod
     def handle(self):
