@@ -8,14 +8,14 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from data_base.db_core import Base
 
-from settings import config
+from settings import config, utility
 from models.product import Product
 from models.order import Order
 from settings import utility
 
 
 # Метакласс контролирующий DB Manager и его объекты
-# Выполняет постоянную проверку подключения к БД и если соединения нет, он его делает
+# который выполняет постоянную проверку подключения к БД и если соединения нет, он его делает
 class Singleton(type):
     """
     Паттерн Singleton предоставляет механизм создания одного
@@ -176,3 +176,22 @@ class DBManager(metaclass=Singleton):
         self._session.query(Order).filter_by(product_id=product_id).delete()
         self._session.commit()
         self.close()
+
+    def delete_all_order(self):
+        """
+        Удаляет данные всего заказа
+        """
+        all_id_orders = self.select_all_order_id()
+
+        for itm in all_id_orders:
+            self._session.query(Order).filter_by(id=itm).delete()
+            self._session.commit()
+        self.close()
+
+    def select_all_order_id(self):
+        """
+        Возвращает все id заказа
+        """
+        result = self._session.query(Order.id).all()
+        self.close()
+        return utility._convert(result)
